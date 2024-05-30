@@ -1,8 +1,0 @@
-dataset:
-  name: "argilla/tripadvisor-hotel-reviews"
-  split: "train"
-  batch_size: 32
-  num_workers: 4
-  shuffle: true
-  pin_memory: true
-  drop_last: true
