@@ -1,0 +1,9 @@
+hydra-core
+transformers
+wandb
+fastapi
+datasets
+lightning
+torch
+torchvision
+torchtext
