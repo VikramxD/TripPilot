@@ -1,0 +1,8 @@
+topic_modelling_dataset:
+  name: "argilla/tripadvisor-hotel-reviews"
+  processed_dataset: "../data/processed_dataset.csv"
+  batch_size: 32
+  num_workers: 4
+  shuffle: true
+  pin_memory: true
+  drop_last: true
