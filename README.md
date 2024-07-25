@@ -1,4 +1,4 @@
-# 🌍 AI Itinerary and Travel Planner
+# 🌍 TripPilot
 
 An intelligent travel companion leveraging cutting-edge AI to create personalized itineraries and recommendations.
 
