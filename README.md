@@ -3,8 +3,6 @@
 An intelligent travel companion leveraging cutting-edge AI to create personalized itineraries and recommendations.
 
 
-
-
 ## 🚀 Features
 • Personalized Itineraries: AI-powered travel plans tailored to your preferences
 • Real-time Recommendations: Up-to-date suggestions for attractions and activities
@@ -44,10 +42,8 @@ Prerequisites:
 ## 📊 Monitoring
 We use Weights and Biases for comprehensive monitoring. Key metrics include:
 • Model accuracy and perplexity
-• API response times
+• API response time
 • Inference latency
-• Resource utilization (CPU, GPU, Memory)
-Access the dashboard at [wandb.ai/your-project](https://wandb.ai/your-project)
 
 ## 🔧 Deployment
 The system is deployed on AWS EC2 instances:
@@ -55,11 +51,6 @@ The system is deployed on AWS EC2 instances:
 • PyTorch Lightning model for generating responses
 • LanceDB for efficient vector storage and retrieval
 • Triton Inference Server for optimized model serving
-
-GitHub Actions automate the deployment process:
-• Runs tests on pull requests
-• Deploys to staging environment for review
-• Deploys to production on merges to main branch
 
 ## 🙏 Acknowledgements
 • Lightning team for the Lightning framework
