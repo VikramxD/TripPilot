@@ -6,4 +6,5 @@ lightning
 torch
 torchvision
 torchtext
-pytriton
+nvidia-pytriton
+pydantic-settings
