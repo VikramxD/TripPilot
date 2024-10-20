@@ -6,5 +6,8 @@ lightning
 torch
 torchvision
 torchtext
-nvidia-pytriton
+litserve
 pydantic-settings
+seaborn
+nltk
+scikit-learn
