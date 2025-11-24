@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  trippilot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: trippilot-api
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - LLM_PROVIDER=${LLM_PROVIDER:-openai}
+      - DEFAULT_MODEL=${DEFAULT_MODEL:-gpt-4o}
+      - WANDB_ENABLED=${WANDB_ENABLED:-false}
+      - WANDB_PROJECT=${WANDB_PROJECT:-trippilot}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+    volumes:
+      - trippilot-data:/app/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+    networks:
+      - trippilot-network
+
+  # Optional: ChromaDB as external service for better performance
+  chromadb:
+    image: chromadb/chroma:latest
+    container_name: trippilot-chromadb
+    ports:
+      - "8001:8000"
+    volumes:
+      - chromadb-data:/chroma/chroma
+    environment:
+      - ANONYMIZED_TELEMETRY=false
+    networks:
+      - trippilot-network
+    profiles:
+      - with-chromadb
+
+volumes:
+  trippilot-data:
+  chromadb-data:
+
+networks:
+  trippilot-network:
+    driver: bridge
