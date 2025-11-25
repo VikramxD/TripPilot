@@ -11,3 +11,6 @@ pydantic-settings
 seaborn
 nltk
 scikit-learn
+gradio>=4.0.0
+numpy
+pandas
